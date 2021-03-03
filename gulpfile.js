@@ -9,7 +9,7 @@ const style = () => {
     //2. pass file through sass compiler
         .pipe(sass())
     //3. where do we save compiled file?
-        .pipe(gulp.dest("./css"))
+        .pipe(gulp.dest("./dist/css"))
     //4. stream changes to all browsers
         .pipe(browserSync.stream());
 }
@@ -18,12 +18,12 @@ const watch = () => {
     //initialize server
     browserSync.init({
         server: {
-            baseDir: "./"
+            baseDir: "./dist/"
         }
     });
     //watch for changes
     gulp.watch("./scss/**/*.scss", style);
-    gulp.watch("./*.html").on("change", browserSync.reload);
+    gulp.watch("./dist/*.html").on("change", browserSync.reload);
     gulp.watch("./js/**/*.js").on("change", browserSync.reload);
     
 }
