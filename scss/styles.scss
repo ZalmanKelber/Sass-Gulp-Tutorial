@@ -1,5 +1,7 @@
 @import "./resets";
 @import "./variables";
+@import "./functions";
+@import "./mixins";
 
 
 body {
@@ -8,15 +10,24 @@ body {
 }
 
 .main {
-    width: 80%;
+    width: 80% - 40%;
     margin: 0 auto;
+    @include flexCenter(row);
     #{&}-first-paragraph {
-        font-weight: map-get($font-weights, small);
-    }
-    #{&}-bold-paragraph {
-        font-weight: map-get($font-weights, bold);
+        font-weight: weight(small);
         &:hover {
-            color: pink;
+            color: yellowgreen;
         }
     }
+    #{&}-bold-paragraph {
+        @extend .main-first-paragraph;
+        font-weight: weight(bold);
+    }
+    @include mobile {
+        flex-direction: column;
+    }
+}
+
+.light {
+    @include theme(false);
 }
