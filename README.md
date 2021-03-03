@@ -1,1 +1,1 @@
-Simple walkthrough of [this](https://www.youtube.com/watch?v=QgMQeLymAdU) tutorial
+Simple walkthrough of [this](https://www.youtube.com/watch?v=QgMQeLymAdU) tutorial and [this](https://www.youtube.com/watch?v=_a5j7KoflTs) tutorial
